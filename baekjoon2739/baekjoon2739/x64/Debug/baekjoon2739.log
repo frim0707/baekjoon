@@ -1,0 +1,3 @@
+﻿  main.cpp
+E:\Github\cppPractice\baekjoon2739\baekjoon2739\main.cpp(9,8): warning C4804: '<': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+  baekjoon2739.vcxproj -> E:\Github\cppPractice\baekjoon2739\x64\Debug\baekjoon2739.exe

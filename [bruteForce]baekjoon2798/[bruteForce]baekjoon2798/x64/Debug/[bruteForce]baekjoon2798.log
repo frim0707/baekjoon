@@ -1,0 +1,4 @@
+﻿  main.cpp
+E:\Github\cppPractice\[bruteForce]baekjoon2798\[bruteForce]baekjoon2798\main.cpp(15,8): warning C4804: '<=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+E:\Github\cppPractice\[bruteForce]baekjoon2798\[bruteForce]baekjoon2798\main.cpp(21,11): warning C4804: '<=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+  [bruteForce]baekjoon2798.vcxproj -> E:\Github\cppPractice\[bruteForce]baekjoon2798\x64\Debug\[bruteForce]baekjoon2798.exe
