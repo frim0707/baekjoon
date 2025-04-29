@@ -12,11 +12,11 @@ public class bj2164 {
 
         Queue<Integer> queue = new LinkedList<>();
 
-        for(int i = 1; i <= cnt; i++) {
+        for (int i = 1; i <= cnt; i++) {
             queue.offer(i);
         }
 
-        while(queue.size() > 1) {
+        while (queue.size() > 1) {
             queue.poll();
             queue.offer(queue.peek());
             queue.poll();
