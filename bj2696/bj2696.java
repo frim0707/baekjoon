@@ -1,9 +1,10 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.List;
-import java.util.LinkedList;
 import java.lang.StringBuilder;
+import java.util.Queue;
+import java.util.PriorityQueue;
+import java.util.Comparator;
 
 public class bj2696 {
     public static void main(String[] args) throws IOException {
@@ -11,26 +12,33 @@ public class bj2696 {
         int T = Integer.parseInt(br.readLine());
 
         StringBuilder sb = new StringBuilder();
-
+        
         for(int i = 0; i < T; i++) {
-            int M = Integer.parseInt(br.readLine());
-            String[] nums = br.readLine().split(" ");
-            
-            sb.append((M + 1 )/ 2);
-            
-            List<Integer> list = new LinkedList<>();
-            for(int j = 0; j < M; j++) {
-                list.add(Integer.parseInt(nums[j]));
-                
-                if(j % 2 == 0) {
-                    if(j % 20 == 0) sb.append("\n");
-
-                    list.sort(null);
-                    sb.append(list.get(j / 2) + " ");
+            Queue<Integer> low = new PriorityQueue<>();
+            Queue<Integer> high = new PriorityQueue<>(new Comparator<Object>() {
+                public int compare(Object o1, Object o2) {
+                    return (int)o2 - (int)o1;
                 }
             }
-            sb.append("\n");
+            );
+
+            int M = Integer.parseInt(br.readLine());
+            sb.append((M + 1) / 2).append("\n");
+
+            String[] strArr = br.readLine().split(" ");
+
+            for(int j = 0; j < M; j++) {
+                Integer num = Integer.parseInt(strArr[j]);
+                
+                high.offer(num);
+                if(j % 2 == 0) {
+                    low.offer(high.poll());
+                    sb.append(low.peek()).append(" ");
+                    if(j % 20 == 0) sb.append("\n");
+                }
+            }
         }
+        
         System.out.println(sb);
     }
 }
